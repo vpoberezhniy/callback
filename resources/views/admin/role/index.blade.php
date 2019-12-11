@@ -15,22 +15,17 @@
         </tr>
         </thead>
         <tbody>
-        {{--@foreach($contragent as $value)--}}
+        @foreach($role as $value)
 
-        {{--<tr>--}}
-        {{--<td>{{ $value->name }}</td>--}}
-        {{--<td>{{ $value->organization }}</td>--}}
-        {{--<td>{{ $value->phone }}</td>--}}
-        {{--<td>{{ $value->email }}</td>--}}
-        {{--<td>{{ $value->description }}</td>--}}
-        {{--<td>{{ $value->city }}</td>--}}
-        {{--<td><a href="{{url('/admin/podryad/' . $value->id . '/edit')}}" ><button class="btn btn-info">View</button></a>--}}
-        {{--{!!Form::open(['url'=>'admin/podryad/'.$value->id,'method'=>'DELETE', 'style'=>'display:inline'])!!}--}}
-        {{--{!!Form::submit('Delete', ['class'=>'btn btn-danger'])  !!}--}}
-        {{--{!!Form::close()!!}--}}
-        {{--</td>--}}
-        {{--</tr>--}}
-        {{--@endforeach--}}
+        <tr>
+        <td>{{ $value->name }}</td>
+        <td><a href="{{url('/admin/role/' . $value->id . '/edit')}}" ><button class="btn btn-info">View</button></a>
+        {!!Form::open(['url'=>'admin/role/'.$value->id,'method'=>'DELETE', 'style'=>'display:inline'])!!}
+        {!!Form::submit('Delete', ['class'=>'btn btn-danger'])  !!}
+        {!!Form::close()!!}
+        </td>
+        </tr>
+        @endforeach
         </tbody>
     </table>
 
