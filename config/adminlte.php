@@ -180,20 +180,19 @@ return [
         ],
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
+            'url'  => '#',
             'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Roles',
             'url'         => 'admin/role/index',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Users',
+            'url'  => 'admin/user/',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

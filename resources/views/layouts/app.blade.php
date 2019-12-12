@@ -38,6 +38,10 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                {{--@if(Auth::check() &&  Auth::user()->hasRole('admin'))--}}
+                    {{--<a class="navbar-brand" href="{{ url('/admin') }}">Admin_panel</a>--}}
+                {{--@endif--}}
+                {{--<a class="navbar-brand" href="{{ url('/') }}">Home_page</a>--}}
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
