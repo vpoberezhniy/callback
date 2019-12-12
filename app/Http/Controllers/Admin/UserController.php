@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 
 class UserController extends Controller
 {
@@ -27,7 +28,8 @@ class UserController extends Controller
     public function create()
     {
         $user = new User();
-        return view('admin/user/create', compact('user'));
+        $role = Role::all()->pluck('name', 'id');
+        return view('admin/user/create', compact('user', 'role'));
     }
 
     /**
@@ -72,7 +74,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.user.create', compact('user'));
+        $role = Role::all()->pluck('name', 'id');
+        return view('admin.user.create', compact('user', 'role'));
     }
 
     /**

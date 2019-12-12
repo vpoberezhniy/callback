@@ -39,7 +39,7 @@
                 <div class="form-group">
                     {!! Form::label('role_id', 'Role:', ['class'=>'control-label col-sm-3']); !!}
                     <div class="col-sm-9">
-                        {!! Form::text('role_id', null, ['class'=>'form-control']) !!}
+                        {!! Form::select('role_id', $role,  null, ['class'=>'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group">

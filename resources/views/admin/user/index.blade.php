@@ -21,7 +21,7 @@
             <tr>
                 <td>{{ $value->name }}</td>
                 <td>{{ $value->email }}</td>
-                <td>{{ $value->role_id }}</td>
+                <td>{{ $value->role->name }}</td>
                 <td><a href="{{url('/admin/user/' . $value->id . '/edit')}}" ><button class="btn btn-info">View</button></a>
                     {!!Form::open(['url'=>'admin/user/'.$value->id,'method'=>'DELETE', 'style'=>'display:inline'])!!}
                     {!!Form::submit('Delete', ['class'=>'btn btn-danger'])  !!}
