@@ -64,11 +64,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $role = Role::findByName('guest');
+        $role = Role::where('name', 'customer')->first();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => $role->id,
+            'role_id' => $role->id,
             'password' => Hash::make($data['password']),
         ]);
     }
