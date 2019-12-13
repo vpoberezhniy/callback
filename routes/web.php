@@ -24,5 +24,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::resource('/role', 'RoleController');
     Route::resource('/user', 'UserController');
 
-
 });
+
+Route::resource('/tickets', 'TicketsController');
