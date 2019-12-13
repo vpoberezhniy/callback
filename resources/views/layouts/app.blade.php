@@ -34,14 +34,16 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                {{--<!-- Branding Image -->--}}
-                {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
-                    {{--{{ config('app.name', 'Laravel') }}--}}
-                {{--</a>--}}
-                @if(Auth::check())
-                    <a class="navbar-brand" href="{{ url('/admin') }}">Admin_panel</a>
-                @endif
-                <a class="navbar-brand" href="{{ url('/') }}">Home_page</a>
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                {{--@if(Auth::check() && Auth::user()->role('manager'))--}}
+                    {{--<a class="navbar-brand" href="{{ url('/ticket') }}">Admin_panel</a>--}}
+                {{--@endif--}}
+                {{--@if(Auth::check() && Auth::user()->role('customer'))--}}
+                    {{--<a class="navbar-brand" href="{{ url('/ticket/create') }}">Admin_panel</a>--}}
+                {{--@endif--}}
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
