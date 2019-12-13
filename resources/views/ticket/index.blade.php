@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
                                 <a href="{{url('/ticket/create')}}"><button class="btn btn-info">Create new ticket</button></a><br><br>
 
                                 <table id="contact" class="display table">
@@ -26,7 +26,7 @@
                                     @foreach($ticket as $value)
                                         <tr>
                                             <td>{{ $value->theme }}</td>
-                                            <td>{{ $value->message }}</td>
+                                            <td>{{ str_limit($value->message) }}</td>
                                             <td>{{ $value->created_at }}</td>
 
                                             {{--<td>{{ $value->role->name }}</td>--}}
