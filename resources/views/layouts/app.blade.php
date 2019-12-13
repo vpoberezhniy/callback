@@ -34,10 +34,10 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                {{--<!-- Branding Image -->--}}
+                {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+                    {{--{{ config('app.name', 'Laravel') }}--}}
+                {{--</a>--}}
                 @if(Auth::check())
                     <a class="navbar-brand" href="{{ url('/admin') }}">Admin_panel</a>
                 @endif

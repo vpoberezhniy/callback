@@ -1,0 +1,23 @@
+echo "# laravel6_test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:vpoberezhniy/laravel6_test.git
+git push -u origin master
+
+
+git add .
+git status
+git commit -m ''
+git status
+git log --pretty=oneline
+git push
+
+
+
+
+
+
+php artisan tinker
+
+php artisan ui:auth   - Авторизация на версии 6,0

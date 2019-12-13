@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         $user = new User();
         $role = Role::all()->pluck('name', 'id');
-        $default_role = Role::where('name', 'customers')->first();
+        $default_role = Role::where('name', 'customer')->first();
         return view('admin/user/create', compact('user', 'role', 'default_role'));
     }
 
@@ -76,7 +76,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $role = Role::all()->pluck('name', 'id');
-        $default_role = Role::where('name', 'customers')->first();
+        $default_role = Role::where('name', 'customer')->first();
         return view('admin.user.create', compact('user', 'role', 'default_role'));
     }
 

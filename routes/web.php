@@ -26,4 +26,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
 });
 
-Route::resource('/tickets', 'TicketsController');
+Route::resource('/ticket', 'TicketController');
