@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Ticket;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
@@ -41,11 +43,12 @@ class TicketController extends Controller
             'theme' => 'required|max:100',
             'message' => 'required|min:50',
         ]);
-
+        session()->put('user', Auth::user());
         $ticket = new Ticket();
         $ticket->theme = $request->theme;
         $ticket->message = $request->message;
-//        $ticket->email = $request->email;
+        $ticket->customer_name = $request->session()->get('user')->name;
+        $ticket->customer_email = $request->session()->get('user')->email;
         if($request->file != null)
         {
             $file = $request->file;
@@ -53,8 +56,6 @@ class TicketController extends Controller
             $file->move(public_path().'/files', $fName);
             $ticket->file = $fName;
         };
-//        $ticket->role_id = $request->role_id;
-//        $ticket->password = $request->password;
         $ticket->save();
         return redirect('/ticket/create');
     }
