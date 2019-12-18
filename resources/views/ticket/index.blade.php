@@ -19,6 +19,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+
                                     @foreach($ticket as $value)
                                         <tr>
                                             <td>{{ $value->theme }}</td>
