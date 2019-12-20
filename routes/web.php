@@ -19,7 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('role');
 Route::resource('/ticket', 'TicketController');
-//Route::get('/ticket')
+//Route::get('/ticket/send', 'MailController@send');
+Route::get('/send', 'MailController@send');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function(){
     Route::get('/', 'AdminController@dashboard');

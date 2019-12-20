@@ -35,23 +35,15 @@
                 </button>
 
                 <!-- Branding Image -->
-                {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
-                    {{--{{ config('app.name', 'Laravel') }}--}}
-                {{--</a>--}}
-                @if(Auth::check() && Auth::user()->role('manager'))
-                    <a class="navbar-brand" href="{{ url('/ticket') }}">Manager_Page</a>
-                @endif
-                @if(Auth::check() && Auth::user()->role('customer'))
-                    <a class="navbar-brand" href="{{ url('/ticket/create') }}">User_Page</a>
-                @endif
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
+                <ul class="nav navbar-nav">                    &nbsp;
                 </ul>
-
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
