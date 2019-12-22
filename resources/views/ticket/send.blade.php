@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>Your ticket is sended</h1>
-    <a href="#">Go to general page</a>
+    <h1>Thank you. Your ticket is sended</h1>
+    <br>
+    <h2><a href="{{url('ticket/create')}}">Go to back</a></h2>
 
 @endsection

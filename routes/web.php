@@ -12,14 +12,22 @@
 */
 
 Route::get('/', function () {
+
+//    App\Jobs\SendReminderEmail::dispatch('TEST MESSAGE')->delay(now()->addMinutes(1));
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('role');
-Route::resource('/ticket', 'TicketController');
-//Route::get('/ticket/send', 'MailController@send');
+//Route::resource('/ticket', 'TicketController');
+
+Route::get('/ticket', 'TicketController@index');
+Route::get('/ticket/{id}', 'TicketController@create');
+Route::get('/ticket/{id}', 'TicketController@show');
+Route::delete('/ticket/{id}', 'TicketController@destroy');
+
+
 Route::get('/send', 'MailController@send');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function(){
