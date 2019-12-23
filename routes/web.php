@@ -20,12 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('role');
-//Route::resource('/ticket', 'TicketController');
+Route::resource('/ticket', 'TicketController');
 
-Route::get('/ticket', 'TicketController@index');
-Route::get('/ticket/{id}', 'TicketController@create');
-Route::get('/ticket/{id}', 'TicketController@show');
-Route::delete('/ticket/{id}', 'TicketController@destroy');
+//Route::get('/ticket', 'TicketController@index');
+//Route::get('/ticket/{id}', 'TicketController@create');
+//Route::get('/ticket/{id}', 'TicketController@show');
+//Route::delete('/ticket/{id}', 'TicketController@destroy');
 
 
 Route::get('/send', 'MailController@send');

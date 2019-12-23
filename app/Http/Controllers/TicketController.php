@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Ticket;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\SendReminderEmail;
 
 class TicketController extends Controller
 {
@@ -57,6 +58,7 @@ class TicketController extends Controller
             $ticket->file = $fName;
         };
         $ticket->save();
+        $ticket = SendReminderEmail::dispatch('TEST MESSAGE')->delay(now()->addMinutes(1));
         return redirect('/ticket/create');
     }
 
