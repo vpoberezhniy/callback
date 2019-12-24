@@ -3,8 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Routing\Console\MiddlewareMakeCommand;
+use Fideloper\Proxy\TrustProxies as Middleware;
 
-class RoleMiddleware
+class RoleMiddleware extends Middleware
 {
     /**
      * Handle an incoming request.
@@ -15,10 +17,18 @@ class RoleMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if( $request->user()->hasRole('Manager') == false )
+
+//        if( $request->user()->hasRole('man') == false )
+//        {
+//            return redirect('/login');
+//        }
+//        return $next($request);
+
+        if($request->user()->hasRole('manager') == false )
         {
             return redirect('/login');
         }
-        return $next($request);
+
+        return redirect('home');
     }
 }
