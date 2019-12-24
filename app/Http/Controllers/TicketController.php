@@ -58,7 +58,7 @@ class TicketController extends Controller
             $ticket->file = $fName;
         };
         $ticket->save();
-        $ticket = SendReminderEmail::dispatch('TEST MESSAGE')->delay(now()->addMinutes(1));
+//        $ticket = SendReminderEmail::dispatch('TEST MESSAGE')->delay(now()->addMinutes(1));
         return redirect('/ticket/create');
     }
 

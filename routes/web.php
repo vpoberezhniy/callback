@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('role');
-Route::resource('/ticket', 'TicketController');
+Route::resource('/ticket', 'TicketController')->middleware('auth');
 
 Route::get('/send', 'MailController@send');
 

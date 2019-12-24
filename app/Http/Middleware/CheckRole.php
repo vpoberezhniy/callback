@@ -24,6 +24,5 @@ class CheckRole
         } else {
             return redirect('/ticket/create');
         }
-        //return $next($request);
     }
 }
