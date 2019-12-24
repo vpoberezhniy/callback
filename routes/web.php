@@ -12,8 +12,6 @@
 */
 
 Route::get('/', function () {
-
-//    App\Jobs\SendReminderEmail::dispatch('TEST MESSAGE')->delay(now()->addMinutes(1));
     return view('welcome');
 });
 

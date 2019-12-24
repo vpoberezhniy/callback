@@ -17,13 +17,6 @@ class RoleMiddleware extends Middleware
      */
     public function handle($request, Closure $next)
     {
-
-//        if( $request->user()->hasRole('man') == false )
-//        {
-//            return redirect('/login');
-//        }
-//        return $next($request);
-
         if($request->user()->hasRole('manager') == false )
         {
             return redirect('/login');
